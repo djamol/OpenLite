@@ -1,5 +1,6 @@
 SCRIPTPATH=$(dirname "$SCRIPT")
-##SRC_Source="/src"
+mkdir src
+SRC_Source= $SCRIPTPATH/src
 
 PWD_DIR=$SCRIPTPATH
 dbpass=admin
