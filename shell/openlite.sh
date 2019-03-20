@@ -1,3 +1,8 @@
+
+SRC_Source=$1/src
+cpu_num=$2
+PWD_DIR=$1
+
 cd $SRC_Source
 useradd -M -s /sbin/nologin www
 mkdir -p /home/wwwroot/default

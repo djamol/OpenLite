@@ -1,3 +1,8 @@
+SRC_Source=$1/src
+cpu_num=$2
+PWD_DIR=$1
+
+cd $SRC_Source
 wget https://github.com/djamol/centos-INSTALLER/raw/master/src/openlite/redis-2.8.11.tar.gz -O redis-2.8.11.tar.gz
 tar zxf redis-2.8.11.tar.gz
 cd redis-2.8.11

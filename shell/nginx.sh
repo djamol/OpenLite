@@ -1,9 +1,13 @@
+
+SRC_Source=$1/src
+cpu_num=$2
+PWD_DIR=$1
+
 cd $SRC_Source
 
 ##[ "$jemalloc_install" = "y" ] && COMMAND="--with-ld-opt='-ljemalloc'"
 ##[ ! -s $SRC_DIR/nginx-1.6.0.tar.gz ] && wget -c http://nginx.org/download/nginx-1.6.0.tar.gz -O $SRC_DIR/nginx-1.6.0.tar.gz
 #wget http://nginx.org/download/nginx-1.6.0.tar.gz -O nginx-1.6.0.tar.gz
-cd $SRC_Source
 wget https://github.com/djamol/centos-INSTALLER/raw/master/src/openlite/nginx-1.9.9.tar.gz
  COMMAND="--with-ld-opt='-ljemalloc'"
  tar zxf nginx-1.9.9.tar.gz

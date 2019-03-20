@@ -1,4 +1,10 @@
 
+SRC_Source=$1/src
+cpu_num=$2
+PWD_DIR=$1
+
+cd $SRC_Source
+
 cd $SCRIPTPATH/src
 FILE=php.tar.gz
 if [ ! -f $FILE ]

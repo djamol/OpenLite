@@ -1,10 +1,13 @@
 ##############################start server
+SRC_Source=$1/src
+cpu_num=$2
+PWD_DIR=$1
 
 mkdir /home
 mkdir /home/www
 touch /home/www/index.html
-cp $PWD_DIR/conf/vhost.sh $SRC_Sourcevhost.sh
-chmod +x $SRC_Sourcevhost.sh
+cp $PWD_DIR/conf/vhost.sh $SRC_Source/vhost.sh
+chmod +x $SRC_Source/vhost.sh
 
 cp $PWD_DIR/conf/p.php /home/www/p.php
 cp $PWD_DIR/conf/llnmp.jpg /home/www/llnmp.jpg

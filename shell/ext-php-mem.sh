@@ -1,3 +1,7 @@
+SRC_Source=$1/src
+cpu_num=$2
+PWD_DIR=$1
+
 cd $SRC_Source
 useradd -M -s /sbin/nologin memcached
 wget https://github.com/djamol/centos-INSTALLER/raw/master/src/openlite/memcached-1.4.20.tar.gz -O memcached-1.4.20.tar.gz

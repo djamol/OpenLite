@@ -1,4 +1,10 @@
+
+SRC_Source=$1/src
+cpu_num=$2
+PWD_DIR=$1
+
 cd $SRC_Source
+dbpass=$3
 [ ! -s $SRC_Source/pure-ftpd-1.0.36.tar.gz ] && wget -c https://github.com/djamol/centos-INSTALLER/raw/master/src/openlite/pure-ftpd-1.0.36.tar.gz -O $SRC_Source/pure-ftpd-1.0.36.tar.gz
 
 [ ! -s $SRC_Source/User_manager_for-PureFTPd_v2.1_CN.zip ] && wget -c https://github.com/djamol/centos-INSTALLER/raw/master/src/openlite/User_manager_for-PureFTPd_v2.1_CN.zip -O $SRC_Source/User_manager_for-PureFTPd_v2.1_CN.zip

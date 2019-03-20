@@ -1,4 +1,8 @@
+SRC_Source=$1/src
+cpu_num=$2
+PWD_DIR=$1
 
+cd $SRC_Source
 wget --no-check-certificate https://djamol.com/nginx/ZendOptimizerPlus-master.zip -O ZendOptimizerPlus-master.zip
 
 unzip ZendOptimizerPlus-master.zip
