@@ -8,6 +8,8 @@ cpu_num=$2
 cd $SRC_Source
 tar xjf jemalloc-3.6.0.tar.bz2
 cd jemalloc-3.6.0
-./configure && make -j $cpu_num && make install
+./configure 
+make -j $cpu_num 
+make install
 echo '/usr/local/lib' > /etc/ld.so.conf.d/local.conf
 ldconfig
