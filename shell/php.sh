@@ -5,7 +5,6 @@ PWD_DIR=$1
 
 cd $SRC_Source
 
-cd $SCRIPTPATH/src
 FILE=php.tar.gz
 if [ ! -f $FILE ]
 then
@@ -37,8 +36,11 @@ fi
 [ -f /etc/redhat-release ] && yum install -y autoconf213 || apt-get install autoconf2.13 -y
 
 [ ! -s /usr/local/lsws/phpbuild ] && mkdir -p /usr/local/lsws/phpbuild
+
+cd $SRC_Source
+
 tar zxf php-litespeed-6.6.tgz
-tar zxf $FILE
+tar zxf php.tar.gz
 mv litespeed php-5.6.20/sapi/litespeed/
 mv php-5.6.20 /usr/local/lsws/phpbuild
 cd /usr/local/lsws/phpbuild/php-5.6.20
