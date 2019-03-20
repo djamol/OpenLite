@@ -27,6 +27,14 @@ echo "Main IP: $MAINIP";
 
 echo -n "Enter Your Main Email Account(Eg. mymail@gmail.com[Gmail,Yahoo]) > ";read text;MAINE=$text;
 
+echo -n "Control Panel Username (Eg. root) > ";read btext;weba=$btext;
+echo -n "Control Panel Password (Eg. pass1234) > ";read ctext;webp=$ctext;
+echo -n "Control Panel Port (Eg. 2083) > ";read ctext;webport=$ctext;
+if ! [ "$webport" -eq "$webport" ] 2> /dev/null
+then
+    echo "Sorry integers only now your control panel PORT 2083"; webport=2083;
+fi
+
 yum install bzip2 gcc -y
 
 if yum -y groupinstall "Development Tools"; then 
@@ -118,7 +126,7 @@ fi
   sh $SCRIPTPATH/shell/cron.sh $BUILD 2>&1 | tee -a openl-cron.txt
   sh $SCRIPTPATH/shell/maria.sh $BUILD 2>&1 | tee -a openl-maria.txt
     sh $SCRIPTPATH/shell/mail.sh $MAINDOMAIN $MAINE $MAINIP 2>&1 | tee -a openl-mail.txt
-	  sh $SCRIPTPATH/shell/webmin.sh "amol" "djamol007" 2066 "$SCRIPTPATH/webmin.txt" 2>&1 | tee -a openl-webmin.txt
+	  sh $SCRIPTPATH/shell/webmin.sh $weba $webp $webport $BUILD 2>&1 | tee -a openl-webmin.txt
    
 
 sh $SCRIPTPATH/shell/end.sh $SCRIPTPATH $cpu_num 2>&1 | tee -a openl-end.txt
