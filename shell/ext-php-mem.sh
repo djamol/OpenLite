@@ -19,8 +19,7 @@ ln -s /usr/local/memcached/bin/memcached /usr/bin/memcached
     chkconfig --add memcached
 chkconfig memcached on
 service memcached start
-
-cd ~
+cd $SRC_Source
 tar zxf memcache-2.2.7.tgz
 cd memcache-2.2.7
 /usr/local/lsws/lsphp5/bin/phpize
