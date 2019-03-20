@@ -123,7 +123,7 @@ fi
  sh $SCRIPTPATH/shell/ext-php-mem.sh $SCRIPTPATH $cpu_num 2>&1 | tee -a openl-mem.txt
  sh $SCRIPTPATH/shell/ext-php-zendOPcache.sh $SCRIPTPATH $cpu_num 2>&1 | tee -a openl-zendOPcache.txt
  sh $SCRIPTPATH/shell/maria.sh $SCRIPTPATH $cpu_num $dbpass 2>&1 | tee -a openl-maria.txt
- sh $SCRIPTPATH/shell/ftp.sh $SCRIPTPATH $cpu_num $dbpass 2>&1 | tee -a openl-ftp.txt
+ sh $SCRIPTPATH/shell/ftp.sh $SCRIPTPATH $BUILD 2>&1 | tee -a openl-ftp.txt
  
  sh $SCRIPTPATH/shell/bind.sh $BUILD 2>&1 | tee -a openl-bind.txt
   sh $SCRIPTPATH/shell/cron.sh $BUILD 2>&1 | tee -a openl-cron.txt
