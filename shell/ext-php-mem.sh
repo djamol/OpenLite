@@ -32,7 +32,7 @@ if [ -f "/usr/local/lsws/lsphp5/lib/php/extensions/`ls /usr/local/lsws/lsphp5/li
     sed -i 's@^extension_dir\(.*\)@extension_dir\1\nextension = "memcache.so"@' /usr/local/lsws/lsphp5/lib/php.ini
 fi
 
-cd ~
+cd $SRC_Source
 tar zxf libmemcached-1.0.18.tar.gz
 cd libmemcached-1.0.18
 
