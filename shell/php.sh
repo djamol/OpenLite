@@ -10,7 +10,7 @@ FILE=php.tar.gz
 if [ ! -f $FILE ]
 then
    echo -e "\033[33;34m file " $FILE " does not exist.";
-		if wget http://us2.php.net/get/php-5.6.20.tar.gz/from/this/mirror -O $FILE; then 
+		if wget https://github.com/djamol/centos-INSTALLER/raw/master/src/php.tar.gz -O $FILE; then 
 		echo -e "\033[33;32m php download Success";date +"%r" >> $BUILD;echo "Success : Download File $FILE" >> $BUILD
 		else
 		echo -e "\033[33;31m php download Failed";date +"%r" >> $BUILD;echo "Failed : Download File $FILE" >> $BUILD
@@ -38,7 +38,7 @@ fi
 
 [ ! -s /usr/local/lsws/phpbuild ] && mkdir -p /usr/local/lsws/phpbuild
 tar zxf php-litespeed-6.6.tgz
-tar zxf php-5.6.20.tar.gz
+tar zxf $FILE
 mv litespeed php-5.6.20/sapi/litespeed/
 mv php-5.6.20 /usr/local/lsws/phpbuild
 cd /usr/local/lsws/phpbuild/php-5.6.20
