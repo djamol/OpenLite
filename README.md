@@ -9,4 +9,4 @@ yum -y install wget unzip;wget --no-check-certificate -O installer.zip  https://
 
 
 
-./lsws.sh > /dev/null 2>&1 < /dev/null &
+./lsws.sh &</dev/null &
