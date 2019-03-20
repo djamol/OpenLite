@@ -2,7 +2,7 @@
 SRC_Source=$1/src
 cpu_num=$2
 PWD_DIR=$1
-
+rm -rf /home/www
 mkdir /home
 mkdir /home/www
 touch /home/www/index.html
@@ -23,6 +23,13 @@ pureftpd_install="y"
 [ "$memcache_install" = "y" ] && sed -i 's/{memcached}/\&nbsp;<a href=\"http:\/\/{ip}\/memcached\.php\" title=\"MemCached\" target=\"_blank\">MemCached<\/a>/g' /home/www/index.html || sed -i 's/{memcached}//g' /home/www/index.html
 
 [ "$pureftpd_install" = "y" ] && sed -i 's/{ftp}/<a href=\"http:\/\/{ip}\/ftp\/\" title=\"FTP Manager\" target=\"_blank\">FTP Manager<\/a>\&nbsp;/g' /home/www/index.html || sed -i 's/{ftp}//g' /home/www/index.html
+
+
+[ ! -f $SRC_Source/phpMyAdmin-4.1.14-english.tar.gz ] && wget -c https://github.com/djamol/centos-INSTALLER/raw/master/src/openlite/phpMyAdmin-4.1.14-english.tar.gz -O phpMyAdmin-4.1.14-english.tar.gz
+tar zxf phpMyAdmin-4.1.14-english.tar.gz
+mv phpMyAdmin-4.1.14-english /home/www/phpmyadmin/
+chown -R www:www /home/www/
+
 
 sed -i "s/{ip}/$IP/g" /home/www/index.html
 #check litespeed
