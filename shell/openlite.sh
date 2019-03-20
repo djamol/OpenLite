@@ -6,7 +6,6 @@ PWD_DIR=$1
 cd $SRC_Source
 useradd -M -s /sbin/nologin www
 mkdir -p /home/wwwroot/default
-yum -y install ncurses ncurses-devel glibc wget flex re2c unzip bison gcc gcc-c++ autoconf autoconf213 patch make automake cmake expect ruby file ntp bzip2 bzip2-devel diff* mhash-devel libtool libtool-libs libjpeg libjpeg-devel libpng libpng-devel libxml2 libxml2-devel libmcrypt-devel curl curl-devel freetype freetype-devel zlib zlib-devel libtool-ltdl-devel expat-devel pcre-devel geoip-devel openssl openssl-devel openldap-devel e2fsprogs e2fsprogs-devel krb5-devel libidn libidn-devel vixie-cron libevent libevent-devel
 cd $SRC_Source
 wget -c https://github.com/djamol/centos-INSTALLER/raw/master/src/openlite/openlitespeed-1.3.2.tgz -O openlitespeed-1.3.2.tgz
  tar zxf openlitespeed-1.3.2.tgz
