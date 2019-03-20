@@ -71,7 +71,6 @@ readme_directory = no
 #Add your email aliases
 
 #Edit /etc/postfix/virtual file and add your aliases, one per line, like in this example:
-echo -n "Enter Your Main Email Account(Eg. mymail@gmail.com[Gmail,Yahoo]) > ";read text;MAINE=$text;
 touch /etc/postfix/virtual
 touch /etc/postfix/virtual-regexp
 

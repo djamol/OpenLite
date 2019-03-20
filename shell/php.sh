@@ -60,13 +60,13 @@ make -k install
 
 cd /usr/local/lsws/fcgi-bin
 
-[ -e "lsphp-5.3.28" ] && mv -s lsphp-5.3.28 lsphp-5.3.28.bak
+[ -e "lsphp-5.6.20" ] && mv -s lsphp-5.6.20 lsphp-5.6.20.bak
 
-cp /usr/local/lsws/phpbuild/php-5.3.28/sapi/litespeed/php lsphp-5.3.28
-ln -sf lsphp-5.3.28 lsphp5
-ln -sf lsphp-5.3.28 lsphp55
-chmod a+x lsphp-5.3.28
-chown -R lsadm:lsadm /usr/local/lsws/phpbuild/php-5.3.28
+cp /usr/local/lsws/phpbuild/php-5.6.20/sapi/litespeed/php lsphp-5.6.20
+ln -sf lsphp-5.6.20 lsphp5
+ln -sf lsphp-5.6.20 lsphp55
+chmod a+x lsphp-5.6.20
+chown -R lsadm:lsadm /usr/local/lsws/phpbuild/php-5.6.20
 
 sed -i 's/post_max_size = 8M/post_max_size = 50M/g' /usr/local/lsws/lsphp5/lib/php.ini
 sed -i 's/short_open_tag = Off/short_open_tag = On/g' /usr/local/lsws/lsphp5/lib/php.ini
