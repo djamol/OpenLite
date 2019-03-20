@@ -16,4 +16,4 @@ cpu_num=`cat /proc/cpuinfo | grep processor | wc -l`
  sh $SCRIPTPATH/inc/openlite/ext-php-mem.sh $SCRIPTPATH $cpu_num 2>&1 | tee -a openl-mem.txt
  sh $SCRIPTPATH/inc/openlite/ext-php-zendOPcache.sh $SCRIPTPATH $cpu_num 2>&1 | tee -a openl-zendOPcache.txt
  sh $SCRIPTPATH/inc/openlite/ftp.sh $SCRIPTPATH $cpu_num $dbpass 2>&1 | tee -a openl-ftp.txt
- $SCRIPTPATH/inc/openlite/end.sh $SCRIPTPATH $cpu_num 2>&1 | tee -a openl-end.txt
+sh $SCRIPTPATH/inc/openlite/end.sh $SCRIPTPATH $cpu_num 2>&1 | tee -a openl-end.txt
