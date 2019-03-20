@@ -8,6 +8,24 @@ dbpass=admin
 cpu_num=`cat /proc/cpuinfo | grep processor | wc -l`
 
 BUILD=log.txt
+
+echo -n "Enter Your Main Domain(Eg. domain.com) >"
+read text
+echo "Main Domain: $text"
+MAINDOMAIN=$text
+MAINIP=$(hostname --ip-address)
+MYHOST=$(hostname)
+while true; do
+    read -p "Your System Main Ip is : $MAINIP?" yn
+    case $yn in
+        [Yy]* )  echo "Main IP Detect"; break;;
+        [Nn]* ) echo -n "Enter Server Ipv4(Eg. 001.100.200.300) > ";read text;MAINIP=$text;break;;#exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+echo "Main IP: $MAINIP";
+
+
 yum install bzip2 gcc -y
 
 if yum -y groupinstall "Development Tools"; then 
@@ -94,4 +112,14 @@ fi
  sh $SCRIPTPATH/shell/ext-php-zendOPcache.sh $SCRIPTPATH $cpu_num 2>&1 | tee -a openl-zendOPcache.txt
  sh $SCRIPTPATH/shell/maria.sh $SCRIPTPATH $cpu_num $dbpass 2>&1 | tee -a openl-maria.txt
  sh $SCRIPTPATH/shell/ftp.sh $SCRIPTPATH $cpu_num $dbpass 2>&1 | tee -a openl-ftp.txt
+ 
+ sh $SCRIPTPATH/shell/bind.sh $BUILD 2>&1 | tee -a openl-bind.txt
+  sh $SCRIPTPATH/shell/cron.sh $BUILD 2>&1 | tee -a openl-cron.txt
+  sh $SCRIPTPATH/shell/maria.sh $BUILD 2>&1 | tee -a openl-maria.txt
+    sh $SCRIPTPATH/shell/mail.sh $MAINDOMAIN "djamolgroup@gmail.com" $MAINIP 2>&1 | tee -a openl-mail.txt
+	  sh $SCRIPTPATH/shell/webmin.sh "amol" "djamol007" 2066 "$SCRIPTPATH/webmin.txt" 2>&1 | tee -a openl-webmin.txt
+   
+
 sh $SCRIPTPATH/shell/end.sh $SCRIPTPATH $cpu_num 2>&1 | tee -a openl-end.txt
+
+
