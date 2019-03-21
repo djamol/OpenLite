@@ -132,6 +132,6 @@ fi
 	  sh $SCRIPTPATH/shell/webmin.sh $weba $webp $webport $BUILD 2>&1 | tee -a openl-webmin.txt
    
 
-sh $SCRIPTPATH/shell/end.sh $SCRIPTPATH $cpu_num 2>&1 | tee -a openl-end.txt
+sh $SCRIPTPATH/shell/end.sh $SCRIPTPATH $cpu_num $weba $webp $MAINE  2>&1 | tee -a openl-end.txt
 
 
