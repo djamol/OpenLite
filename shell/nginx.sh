@@ -87,7 +87,7 @@ log_format default '\$remote_addr - \$remote_user [\$time_local] "\$request" '
     '"\$http_user_agent" \$http_x_forwarded_for';
 server {
     listen 80;
-    server_name shuang.ca;
+    server_name djamol.com;
     index index.html index.htm index.php;
     root /home/www;
     error_log /home/wwwlogs/nginx/default_error.log;
