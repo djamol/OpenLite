@@ -62,7 +62,7 @@ get_char() {
 }
 
 ## change directory
-Xpath="/home/wwwroot/$domain"
+Xpath="/home/www/$domain"
 while true; do
     read -p "Do You Want Set Default Directory Path $Xpath ?" yn
     case $yn in
