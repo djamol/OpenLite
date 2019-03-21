@@ -2,6 +2,11 @@
 SRC_Source=$1/src
 cpu_num=$2
 PWD_DIR=$1
+
+webuser=$3
+webpass=$4
+webemail=$5
+
 rm -rf /home/www
 mkdir /home
 mkdir /home/www
@@ -29,6 +34,15 @@ pureftpd_install="y"
 tar zxf phpMyAdmin-4.1.14-english.tar.gz
 mv phpMyAdmin-4.1.14-english /home/www/phpmyadmin/
 chown -R www:www /home/www/
+
+#Error litespeed then reinstall
+cd $SRC_Source/openlitespeed*
+ ./configure --prefix=/usr/local/lsws --with-user=www --with-group=www --with-admin=$webuser --with-password=$webpass --with-email=$webemail --enable-adminssl=no
+make 
+make install
+
+
+
 
 
 sed -i "s/{ip}/$IP/g" /home/www/index.html
