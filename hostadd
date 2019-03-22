@@ -210,4 +210,3 @@ echo "The virtual host has been created"
 echo "The path of the virtual host is $Xpath"
 echo "Please upload the web files into $Xpath"
 echo "========================================================================="
-[
