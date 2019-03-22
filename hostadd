@@ -144,12 +144,51 @@ cat >>/usr/local/lsws/conf/$domain.xml<<EOF
     <autoIndex></autoIndex>
     <autoIndexURI></autoIndexURI>
   </index>
+   <customErrorPages>
+    <errorPage>
+      <errCode>404</errCode>
+      <url>http://$domain?error=404-NotFound</url>
+    </errorPage>
+    <errorPage>
+      <errCode>401</errCode>
+      <url>http://$domain?error=401</url>
+    </errorPage>
+    <errorPage>
+      <errCode>403</errCode>
+      <url>http://$domain?error=403</url>
+    </errorPage>
+    <errorPage>
+      <errCode>500</errCode>
+      <url>http://$domain?e=500</url>
+    </errorPage>
+  </customErrorPages>
   <htAccess>
     <allowOverride>31</allowOverride>
     <accessFileName>.htaccess</accessFileName>
   </htAccess>
 </virtualHostConfig>
 EOF
+
+# <contextList>
+#    <context>
+#     <type>NULL</type>
+#      <uri>/</uri>
+#      <location>$VH_ROOT</location>
+#      <allowBrowse>1</allowBrowse>
+#      <enableExpires>1</enableExpires>
+#      <rewrite>
+#        <enable>1</enable>
+#        <rules>
+#        RewriteRule ^video/(.+)$ tube/d2.php?id=$1
+#        RewriteRule tube/(.*)\.html(.*) tube/$1.php$2 [nocase]
+#        RewriteRule hub/(.*)\.html(.*) hub/$1.php$2 [nocase]
+#      </rules>
+#      </rewrite>
+#      <addDefaultCharset>off</addDefaultCharset>
+#    </context>
+#    </contextList>
+
+
 
 chown -R lsadm:lsadm /usr/local/lsws/conf/$domain.xml
 if [ -s /usr/local/nginx ]; then
